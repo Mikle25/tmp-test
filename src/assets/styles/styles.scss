@@ -1,0 +1,29 @@
+@import "./var.scss";
+@import "./nav.scss";
+@import "./btn-menu.scss";
+@import "./list.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: $colorMenu;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+}

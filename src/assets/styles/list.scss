@@ -1,0 +1,97 @@
+.list {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100px;
+  align-items: center;
+
+  &--active {
+    grid-template-rows: 100px 1fr;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+
+    border-bottom: 1px solid $colorMenu;
+}
+
+  &__info {
+    display: flex;
+    width: 25%;
+  }
+
+  &__btn-show {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(90deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(0);
+    }
+
+    &--active {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__sub-list-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition-delay: 0.25s;
+
+
+    &--active {
+      height: 100%;
+      transition-delay: 0;
+      transition: all 0.1s linear;
+    }
+  }
+
+  &__sub-list {
+    opacity: 0;
+    position: relative;
+    transform: translateY(-100%);
+    display: grid;
+    grid-auto-rows: 50px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s linear;
+
+
+    background-color: #fff;
+
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.3s linear;
+    }
+  }
+
+  &__sub-title {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+}

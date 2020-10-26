@@ -1,28 +1,86 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :listNav="listNav" :isActiveMenu="isActiveMenu" @changeMenu="changeMenu"/>
+    <Body :listNav="listNav" :isActiveMenu="isActiveMenu" @toggleShow="toggleShow"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Header from '@/components/Header.vue';
+import Body from '@/components/Body.vue';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      isActiveMenu: false,
+      listNav: [
+        {
+          id: 1,
+          title: 'One',
+          show: false,
+          subTitle: {
+            item1: 'item1',
+            item2: 'item2',
+            item3: 'item3',
+          },
+        },
+        {
+          id: 2,
+          title: 'Two',
+          show: false,
+          subTitle: {
+            item1: 'item1',
+            item2: 'item2',
+            item3: 'item3',
+          },
+        },
+        {
+          id: 3,
+          title: 'Three',
+          show: false,
+          subTitle: {
+            item1: 'item1',
+            item2: 'item2',
+            item3: 'item3',
+          },
+        },
+      ],
+    };
+  },
+  methods: {
+    changeMenu(bool) {
+      this.isActiveMenu = bool;
+    },
+    toggleShow(bool, id) {
+      this.listNav = this.listNav.map((elem) => {
+        if (elem.id === id) {
+          return {
+            id: elem.id,
+            title: elem.title,
+            show: bool,
+            subTitle: elem.subTitle,
+          };
+        }
+        return elem;
+      });
+    },
+  },
   components: {
-    HelloWorld,
+    Header, Body,
   },
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  max-width: 1920px;
+  height: 500px;
+  margin: 0 auto;
 }
 </style>
