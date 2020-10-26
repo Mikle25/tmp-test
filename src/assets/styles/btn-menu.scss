@@ -2,24 +2,24 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: $sizeBtnMenu;
+  height: $sizeBtnMenu;
   background-color: transparent;
 
   & span {
     position: relative;
-    width: 32px;
-    height: 2px;
-    background-color: #fff;
+    width: $sizeBtnMenu;
+    height: $sizeLineBtnMenu;
+    background-color: $colorWhite;
 
     &::before,
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      width: 32px;
-      height: 2px;
-      background-color: #fff;
+      width: $sizeBtnMenu;
+      height: $sizeLineBtnMenu;
+      background-color: $colorWhite;
       transition: all 0.3s ease;
     }
 

@@ -95,7 +95,7 @@ export default {
       grid-template-columns: 55% 40%;
       align-items: center;
       grid-column-gap: 5%;
-      height: 100%;
+      height: $height;
 
       @media (max-width: 992px) {
         grid-template-columns: 75% 20%;
