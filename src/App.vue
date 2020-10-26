@@ -16,6 +16,9 @@
 <script>
 import Header from '@/components/Header.vue';
 import Body from '@/components/Body.vue';
+import user from '../public/images/user.svg';
+import home3 from '../public/images/home3.svg';
+import image from '../public/images/image.svg';
 
 export default {
   name: 'App',
@@ -27,7 +30,7 @@ export default {
           id: 1,
           title: 'One',
           show: false,
-          icon: '/images/user.svg',
+          icon: user,
           subTitle: {
             item1: 'item1',
             item2: 'item2',
@@ -38,7 +41,7 @@ export default {
           id: 2,
           title: 'Two',
           show: false,
-          icon: '/images/image.svg',
+          icon: image,
           subTitle: {
             item1: 'item1',
             item2: 'item2',
@@ -49,7 +52,7 @@ export default {
           id: 3,
           title: 'Three',
           show: false,
-          icon: '/images/home3.svg',
+          icon: home3,
           subTitle: {
             item1: 'item1',
             item2: 'item2',

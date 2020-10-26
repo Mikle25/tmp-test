@@ -13,7 +13,7 @@
       >
         <div class="list__main">
           <div class="list__info">
-            <img :src="item.icon" alt="item.icon">
+            <img :src="item.icon" alt="icon">
             <p>{{item.title}}</p>
           </div>
 
