@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
-  publicPath: '/',
+  publicPath: '/tmp-test/',
   css: {
     loaderOptions: {
       sass: {

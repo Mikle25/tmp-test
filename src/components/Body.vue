@@ -1,6 +1,11 @@
 <template>
   <main class="body">
-    <ul :class="['body__list', {'body__list--active': isActiveMenu}]">
+    <ul
+      :class="[
+        'body__list',
+        {'body__list--active': isActiveMenu}
+      ]"
+    >
       <li
         :class="['list', {'list--active': item.show}]"
         v-for="item in listNav"
@@ -8,7 +13,7 @@
       >
         <div class="list__main">
           <div class="list__info">
-            <img src="" alt="">
+            <img :src="item.icon" alt="icon">
             <p>{{item.title}}</p>
           </div>
 
@@ -80,7 +85,7 @@ export default {
     display: grid;
     width: 100%;
     transform: translateY(-100%);
-    transition: all 0.3s linear;
+    @extend %transitionMain;
 
     &--active {
       opacity: 1;
